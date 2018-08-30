@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-touch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "GrapesJS touch support for mobile devices",
   "main": "dist/grapesjs-touch.min.js",
   "scripts": {
