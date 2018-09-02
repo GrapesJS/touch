@@ -2,7 +2,7 @@
 
 This plugin enables touch support for the GrapesJS editor
 
-
+> Requires GrapesJS v0.14.29 or higher
 
 
 ## Summary
