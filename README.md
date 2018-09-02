@@ -1,8 +1,11 @@
 # GrapesJS Touch
 
-This plugin enables touch support for the GrapesJS editor
+This plugin enables touch support for the GrapesJS editor [Demo](https://grapesjs.com/demo.html)
 
 > Requires GrapesJS v0.14.29 or higher
+
+
+
 
 
 ## Summary
