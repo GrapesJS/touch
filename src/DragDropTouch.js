@@ -298,18 +298,14 @@ export default () => {
         // if target element is an iframe, try propagating event to child element
         if (el && el.nodeName === 'IFRAME') {
           try {
-            var iframeDocument = el.contentWindow.document;
-            // get iframe absolute offset
-            var iframeAbsoluteOffset = { x: 0, y: 0 };
-            do {
-              iframeAbsoluteOffset.x += el.offsetLeft || 0;
-              iframeAbsoluteOffset.y += el.offsetTop || 0;
-              el = el.offsetParent;
-            } while (el);
+            // get iframe absolute offset relative to viewport
+            var rect = el.getBoundingClientRect();
+            var iframeAbsoluteOffset = { x: rect.x, y: rect.y };
             // remove iframe absolute offset from touch position
             var x = pt.x - iframeAbsoluteOffset.x,
               y = pt.y - iframeAbsoluteOffset.y;
             // get element on that position from iframe document
+            var iframeDocument = el.contentWindow.document;
             el = iframeDocument.elementFromPoint(x, y);
           } catch (e) {
             // iframe origin don't allow access
