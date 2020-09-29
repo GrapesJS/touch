@@ -300,10 +300,9 @@ export default () => {
           try {
             // get iframe absolute offset relative to viewport
             var rect = el.getBoundingClientRect();
-            var iframeAbsoluteOffset = { x: rect.x, y: rect.y };
             // remove iframe absolute offset from touch position
-            var x = pt.x - iframeAbsoluteOffset.x,
-              y = pt.y - iframeAbsoluteOffset.y;
+            var x = pt.x - rect.x,
+              y = pt.y - rect.y;
             // get element on that position from iframe document
             var iframeDocument = el.contentWindow.document;
             el = iframeDocument.elementFromPoint(x, y);
